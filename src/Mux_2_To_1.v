@@ -4,10 +4,14 @@ module Mux_2_To_1 (
     input  S,
     input  D0,
     input  D1,
-    output Y
+    output reg Y
 );
 
-    // 2:1 MUX behavior
-    assign Y = S ? D1 : D0;
+    always @(*) begin
+        case (S)
+            1'b0: Y = D0;
+            1'b1: Y = D1;
+        endcase
+    end
 
-endmodule // Mux_2_To_1
+endmodule
