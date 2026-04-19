@@ -6,17 +6,13 @@ module Mux_4_To_1 (
     input  D1,
     input  D2,
     input  D3,
-    output reg Y
+    output Y
 );
 
-    // 4:1 MUX behavior
-    always @(*) begin
-        case (S)
-            2'b00: Y = D0;
-            2'b01: Y = D1;
-            2'b10: Y = D2;
-            2'b11: Y = D3;
-        endcase
-    end
+    // Define the 4:1 MUX behavior
+    assign Y = (S == 2'b00) ? D0 :
+               (S == 2'b01) ? D1 :
+               (S == 2'b10) ? D2 :
+                               D3;
 
 endmodule // Mux_4_To_1
