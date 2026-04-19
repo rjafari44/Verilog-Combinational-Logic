@@ -19,4 +19,4 @@ module Mux_4_To_1 (
         endcase
     end
 
-endmodule
+endmodule // Mux_4_To_1
