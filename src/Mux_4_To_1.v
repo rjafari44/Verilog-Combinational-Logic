@@ -9,6 +9,7 @@ module Mux_4_To_1 (
     output reg Y
 );
 
+    // 4:1 MUX behavior
     always @(*) begin
         case (S)
             2'b00: Y = D0;

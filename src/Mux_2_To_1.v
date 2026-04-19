@@ -7,6 +7,7 @@ module Mux_2_To_1 (
     output reg Y
 );
 
+    // 2:1 MUX behavior
     always @(*) begin
         case (S)
             1'b0: Y = D0;
